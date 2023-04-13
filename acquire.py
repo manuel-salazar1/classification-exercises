@@ -3,6 +3,12 @@
 import pandas as pd 
 from env import username, password, get_db_url
 import os
+import seaborn as sns
+import numpy as np
+from pydataset import data
+
+
+# to drop column -- iris.drop('Unnamed: 0', axis=1, inplace=True)
 
 
 # FUNCTIONS
@@ -34,7 +40,7 @@ def get_titanic_data(filename="titanic.csv"):
     - Output titanic df
     """
     if os.path.exists(filename):
-        df = pd.read_csv(filename)
+        df = pd.read_csv(filename, index_col=0)
         print('Found CSV')
         return df
     
@@ -74,7 +80,7 @@ def get_iris_data(filename="iris.csv"):
     - Output titanic df
     """
     if os.path.exists(filename):
-        df = pd.read_csv(filename) 
+        df = pd.read_csv(filename, index_col=0) 
         print('Found CSV')
         return df
     
@@ -121,7 +127,7 @@ def get_telco_data(filename="telco.csv"):
     - Output titanic df
     """
     if os.path.exists(filename):
-        df = pd.read_csv(filename) 
+        df = pd.read_csv(filename, index_col=0) 
         print('Found CSV')
         return df
     
