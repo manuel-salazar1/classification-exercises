@@ -29,7 +29,7 @@ def prep_titanic(titanic):
     '''
     - This function will clean the titanic dataset
     '''
-    titanic = titanic.drop(columns=['embark_town', 'class', 'deck', 'age'])
+    titanic = titanic.drop(columns=['embark_town', 'class', 'deck']) #, 'age'
     
     titanic.embarked = titanic.embarked.fillna(value='S')
     
